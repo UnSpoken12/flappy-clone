@@ -3,7 +3,7 @@ using UnityEngine;
 public class Parallax : MonoBehaviour
 {
     private float xLimit = -6.2f;
-    private float speed = 1f;
+    private float speed = 5f;
     [SerializeField] private Transform[] list;
     
     void Update()
