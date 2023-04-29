@@ -3,15 +3,17 @@ using UnityEngine;
 public class Spawner : MonoBehaviour
 {
     [SerializeField] private GameObject spawnPrefab;
-    private float spawnRate = 5f;
+    private float spawnRate = 3f;
 
     void Start()
     {
-        InvokeRepeating(nameof(spawnObject), 4f, spawnRate);
+        Invoke(nameof(spawnObject), spawnRate);
     }
 
     private void spawnObject()
     {
         Instantiate(spawnPrefab, transform);
+        spawnRate = Random.Range(1f, 5f);
+        Invoke(nameof(spawnObject), spawnRate);
     }
 }
