@@ -1,24 +1,25 @@
+using System.Collections;
 using UnityEngine;
 
 public class Spawner : MonoBehaviour
 {
     [SerializeField] private GameObject spawnPrefab;
-    private float spawnRate = 3f;
     private bool isSpawning = false;
 
-    private void SpawnObject()
+    private IEnumerator SpawnO()
     {
-        if (isSpawning)
+        yield return new WaitForSeconds(5);
+        while (isSpawning)
         {
             Instantiate(spawnPrefab, transform);
-            spawnRate = Random.Range(1f, 5f);
-            Invoke(nameof(SpawnObject), spawnRate);
+            yield return new WaitForSeconds(Random.Range(2, 6));
         }
+        yield return null;
     }
 
     public void SetSpawning(bool newState)
     {
         isSpawning = newState;
-        SpawnObject();
+        StartCoroutine(nameof(SpawnO));
     }
 }

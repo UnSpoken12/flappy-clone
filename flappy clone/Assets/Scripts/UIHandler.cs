@@ -1,5 +1,5 @@
+using System;
 using UnityEngine;
-using UnityEngine.UI;
 
 public class UIHandler : MonoBehaviour
 {
@@ -9,11 +9,14 @@ public class UIHandler : MonoBehaviour
     [SerializeField] private GameObject pauseTint;
     private bool isPaused = false;
 
+    public event Action gameStarted = delegate { };
+
     public void StartButtonPressed()
     {
         spawner.SetSpawning(true);
         mainMenu.SetActive(false);
         pauseButton.SetActive(true);
+        gameStarted();
     }
 
     public void ExitButtonPressed()
