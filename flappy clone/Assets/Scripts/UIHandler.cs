@@ -1,12 +1,12 @@
 using UnityEngine;
 
-public class MainMenuHandler : MonoBehaviour
+public class UIHandler : MonoBehaviour
 {
     [SerializeField] private Spawner spawner;
 
     public void StartButtonPressed()
     {
-        spawner.spawnObject();
+        spawner.SetSpawning(true);
         gameObject.SetActive(false);
     }
 
