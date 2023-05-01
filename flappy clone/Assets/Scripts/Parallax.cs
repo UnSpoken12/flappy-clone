@@ -12,7 +12,7 @@ public class Parallax : MonoBehaviour
         for (int i = 0; i < list.Length; i++)
         {
             if (list[i].position.x < xLimit) list[i].position = Vector3.zero;
-            list[i].Translate(new Vector3(-1, 0, 0) * (speed / (i+1)) * Time.deltaTime);
+            list[i].Translate(Vector3.left * (speed / (i+1)) * Time.deltaTime);
         }
     }
 

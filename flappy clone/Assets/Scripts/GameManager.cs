@@ -1,4 +1,3 @@
-using System;
 using System.Collections;
 using UnityEngine;
 
@@ -6,8 +5,6 @@ public class GameManager : MonoBehaviour
 {
     public static GameManager instance;
     private State gameState;
-
-    public event Action EndGame = delegate { };
 
     [SerializeField] private UIHandler ui;
     [SerializeField] private Parallax background;
@@ -45,12 +42,12 @@ public class GameManager : MonoBehaviour
                 StartCoroutine(nameof(StartingAnimation));
                 break;
             case State.Running:
+                spawner.StartSpawning();
                 initialTime = Time.time;
                 break;
             case State.End:
                 background.SetSpeed(0);
-                spawner.SetSpawning(false);
-                EndGame();
+                spawner.StopSpawning();
                 // Change player animation
                 break;
         }
@@ -75,6 +72,11 @@ public class GameManager : MonoBehaviour
         }
 
         ChangeGameState(State.Running);
+    }
+
+    public State GetState()
+    {
+        return gameState;
     }
 }
 

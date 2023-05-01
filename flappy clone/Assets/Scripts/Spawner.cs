@@ -4,22 +4,24 @@ using UnityEngine;
 public class Spawner : MonoBehaviour
 {
     [SerializeField] private Rock spawnPrefab;
-    private bool isSpawning = false;
 
     private IEnumerator SpawnObject()
     {
-        yield return new WaitForSeconds(5);
-        while (isSpawning)
+        while (true)
         {
+            yield return new WaitForSeconds(Random.Range(2, 5));
             Instantiate(spawnPrefab, transform);
-            yield return new WaitForSeconds(Random.Range(2, 6));
         }
-        yield return null;
     }
 
-    public void SetSpawning(bool canSpawn)
+    public void StartSpawning()
     {
-        isSpawning = canSpawn;
         StartCoroutine(nameof(SpawnObject));
+    }
+
+    public void StopSpawning()
+    {
+        StopAllCoroutines();
+        foreach (Rock r in GetComponentsInChildren<Rock>()) { r.SetSpeed(0); }
     }
 }
