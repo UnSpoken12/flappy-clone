@@ -9,14 +9,12 @@ public class UIHandler : MonoBehaviour
     [SerializeField] private GameObject pauseTint;
     private bool isPaused = false;
 
-    public event Action gameStarted = delegate { };
-
     public void StartButtonPressed()
     {
         spawner.SetSpawning(true);
         mainMenu.SetActive(false);
         pauseButton.SetActive(true);
-        gameStarted();
+        GameManager.instance.ChangeGameState(State.Start);
     }
 
     public void ExitButtonPressed()

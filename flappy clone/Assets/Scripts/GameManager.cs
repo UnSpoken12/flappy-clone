@@ -1,30 +1,59 @@
+using System;
 using System.Collections;
 using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
+    public static GameManager instance;
+    private State gameState;
+
+    public event Action EndGame = delegate { };
+
     [SerializeField] private UIHandler ui;
     [SerializeField] private Parallax background;
+    [SerializeField] private Spawner spawner;
     [SerializeField] private GameObject player;
 
     private float lerpSpeed = 0.5f;
     private float initialTime;
-    public float score;
+    public float score = 0;
 
-    void Start()
+    private void Awake() 
     {
-        ui.gameStarted += GameStart;
+        instance = this;
     }
 
     private void Update() 
     {
-        score = background.GetSpeed() * (Time.time - initialTime);
+        if (gameState == State.Running)
+        {
+            score = background.GetSpeed() * (Time.time - initialTime);
+        }
+
+        if (Input.GetKeyDown(KeyCode.L)) 
+        {
+            ChangeGameState(State.End);
+        }
     }
 
-    private void GameStart()
+    public void ChangeGameState(State newState)
     {
-        StartCoroutine(nameof(StartingAnimation));
-        score = 0;
+        gameState = newState;
+        switch (gameState)
+        {
+            case State.Start:
+                StartCoroutine(nameof(StartingAnimation));
+                break;
+            case State.Running:
+                initialTime = Time.time;
+                break;
+            case State.End:
+                background.SetSpeed(0);
+                spawner.SetSpawning(false);
+                EndGame();
+                // Change player animation
+                break;
+        }
     }
 
     private IEnumerator StartingAnimation()
@@ -44,10 +73,14 @@ public class GameManager : MonoBehaviour
             player.transform.position = Vector3.Lerp(startPoint, endPoint, fractionOfJourney);
             yield return null;
         }
-    }
 
-    private void OnDisable() 
-    {
-        ui.gameStarted -= GameStart;
+        ChangeGameState(State.Running);
     }
+}
+
+public enum State 
+{
+    Start,
+    Running,
+    End
 }

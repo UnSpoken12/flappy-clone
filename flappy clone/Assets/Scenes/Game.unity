@@ -623,7 +623,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3529468015d1f3a4bb7a63b1d973806f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  spawnPrefab: {fileID: 4319505648750710934, guid: efe7a6b2bb1d34d46a21d6869c78132f, type: 3}
+  spawnPrefab: {fileID: 3285875779677649678, guid: efe7a6b2bb1d34d46a21d6869c78132f, type: 3}
 --- !u!1 &805747743
 GameObject:
   m_ObjectHideFlags: 0
@@ -1459,6 +1459,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ui: {fileID: 1894324368}
   background: {fileID: 2029924910}
+  spawner: {fileID: 632281980}
   player: {fileID: 857555223}
   score: 0
 --- !u!1 &1560411264

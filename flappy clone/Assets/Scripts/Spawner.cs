@@ -3,10 +3,10 @@ using UnityEngine;
 
 public class Spawner : MonoBehaviour
 {
-    [SerializeField] private GameObject spawnPrefab;
+    [SerializeField] private Rock spawnPrefab;
     private bool isSpawning = false;
 
-    private IEnumerator SpawnO()
+    private IEnumerator SpawnObject()
     {
         yield return new WaitForSeconds(5);
         while (isSpawning)
@@ -17,9 +17,9 @@ public class Spawner : MonoBehaviour
         yield return null;
     }
 
-    public void SetSpawning(bool newState)
+    public void SetSpawning(bool canSpawn)
     {
-        isSpawning = newState;
-        StartCoroutine(nameof(SpawnO));
+        isSpawning = canSpawn;
+        StartCoroutine(nameof(SpawnObject));
     }
 }
