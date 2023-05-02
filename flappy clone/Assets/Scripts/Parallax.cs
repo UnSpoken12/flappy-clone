@@ -2,6 +2,7 @@ using UnityEngine;
 
 public class Parallax : MonoBehaviour
 {
+    private const float MAX_SPEED = 5f;
     private float xLimit = -6.2f;
     private float speed = 5f;
 
@@ -21,8 +22,13 @@ public class Parallax : MonoBehaviour
         return speed;
     }
 
-    public void SetSpeed(float newSpeed)
+    public void StopBackground()
     {
-        speed = newSpeed;
+        speed = 0;
+    }
+
+    public void StartBackground()
+    {
+        speed = MAX_SPEED;
     }
 }

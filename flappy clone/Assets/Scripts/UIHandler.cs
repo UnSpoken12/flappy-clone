@@ -1,8 +1,10 @@
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class UIHandler : MonoBehaviour
 {
     [SerializeField] private GameObject mainMenu;
+    [SerializeField] private GameObject gameoverMenu;
     [SerializeField] private GameObject pauseButton;
     [SerializeField] private GameObject pauseTint;
     private bool isPaused = false;
@@ -24,5 +26,22 @@ public class UIHandler : MonoBehaviour
         isPaused = !isPaused;
         Time.timeScale = (isPaused) ? 0 : 1;
         pauseTint.SetActive((isPaused) ? true : false);
+    }
+
+    public void ShowGameOverMenu()
+    {
+        gameoverMenu.SetActive(true);
+        pauseButton.SetActive(false);
+    }
+
+    public void RetryButtonPressed()
+    {
+        gameoverMenu.SetActive(false);
+        StartButtonPressed();
+    }
+
+    public void MenuButtonPressed()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
 }

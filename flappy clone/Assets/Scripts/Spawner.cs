@@ -24,4 +24,10 @@ public class Spawner : MonoBehaviour
         StopAllCoroutines();
         foreach (Rock r in GetComponentsInChildren<Rock>()) { r.SetSpeed(0); }
     }
+
+    public void ClearProps()
+    {
+        if (transform.childCount == 0) return;
+        foreach (Rock r in GetComponentsInChildren<Rock>()) { Destroy(r.gameObject); }
+    }
 }

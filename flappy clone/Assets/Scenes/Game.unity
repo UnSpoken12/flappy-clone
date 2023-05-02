@@ -830,6 +830,34 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5861769724184515351, guid: 066705684b70fdf4abe8718d010177f2, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5861769724184515351, guid: 066705684b70fdf4abe8718d010177f2, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5861769724184515351, guid: 066705684b70fdf4abe8718d010177f2, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1894324368}
+    - target: {fileID: 5861769724184515351, guid: 066705684b70fdf4abe8718d010177f2, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5861769724184515351, guid: 066705684b70fdf4abe8718d010177f2, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: MenuButtonPressed
+      objectReference: {fileID: 0}
+    - target: {fileID: 5861769724184515351, guid: 066705684b70fdf4abe8718d010177f2, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: UIHandler, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 5861769724184515351, guid: 066705684b70fdf4abe8718d010177f2, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
     - target: {fileID: 8667454431571376998, guid: 066705684b70fdf4abe8718d010177f2, type: 3}
       propertyPath: m_Text
       value: 'Menu
@@ -2829,6 +2857,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   mainMenu: {fileID: 1077718514}
+  gameoverMenu: {fileID: 1280411904}
   pauseButton: {fileID: 507439895}
   pauseTint: {fileID: 1058976579}
 --- !u!1 &2029924908
@@ -3268,6 +3297,34 @@ PrefabInstance:
     - target: {fileID: 5861769724184515350, guid: 066705684b70fdf4abe8718d010177f2, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5861769724184515351, guid: 066705684b70fdf4abe8718d010177f2, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5861769724184515351, guid: 066705684b70fdf4abe8718d010177f2, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5861769724184515351, guid: 066705684b70fdf4abe8718d010177f2, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1894324368}
+    - target: {fileID: 5861769724184515351, guid: 066705684b70fdf4abe8718d010177f2, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5861769724184515351, guid: 066705684b70fdf4abe8718d010177f2, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: RetryButtonPressed
+      objectReference: {fileID: 0}
+    - target: {fileID: 5861769724184515351, guid: 066705684b70fdf4abe8718d010177f2, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: UIHandler, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 5861769724184515351, guid: 066705684b70fdf4abe8718d010177f2, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
     - target: {fileID: 8667454431571376998, guid: 066705684b70fdf4abe8718d010177f2, type: 3}
       propertyPath: m_Text

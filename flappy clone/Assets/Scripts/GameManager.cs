@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using UnityEngine;
 
@@ -27,6 +28,7 @@ public class GameManager : MonoBehaviour
             score = background.GetSpeed() * (Time.time - initialTime);
         }
 
+        // Force a game over *DEBUG ONLY*
         if (Input.GetKeyDown(KeyCode.L)) 
         {
             ChangeGameState(State.End);
@@ -38,17 +40,25 @@ public class GameManager : MonoBehaviour
         gameState = newState;
         switch (gameState)
         {
+            // In Main Menu
             case State.Start:
+                score = 0;
+                background.StartBackground();
+                spawner.ClearProps();
                 StartCoroutine(nameof(StartingAnimation));
                 break;
+            
+            // Game Start
             case State.Running:
                 spawner.StartSpawning();
                 initialTime = Time.time;
                 break;
+
+            // Player Dies -> Game Over
             case State.End:
-                background.SetSpeed(0);
+                ui.ShowGameOverMenu();
+                background.StopBackground();
                 spawner.StopSpawning();
-                // Change player animation
                 break;
         }
     }
@@ -72,11 +82,6 @@ public class GameManager : MonoBehaviour
         }
 
         ChangeGameState(State.Running);
-    }
-
-    public State GetState()
-    {
-        return gameState;
     }
 }
 
