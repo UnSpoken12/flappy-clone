@@ -1,5 +1,4 @@
 using UnityEngine;
-using UnityEngine.SceneManagement;
 
 public class UIHandler : MonoBehaviour
 {
@@ -38,10 +37,5 @@ public class UIHandler : MonoBehaviour
     {
         gameoverMenu.SetActive(false);
         StartButtonPressed();
-    }
-
-    public void MenuButtonPressed()
-    {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
 }
