@@ -55,9 +55,9 @@ public class GameManager : MonoBehaviour
 
             // Player Dies -> Game Over
             case State.End:
-                ui.ShowGameOverMenu();
                 background.StopBackground();
                 spawner.StopSpawning();
+                StartCoroutine(nameof(WaitOnGameOver), 2.5f);
                 break;
         }
     }
@@ -81,6 +81,12 @@ public class GameManager : MonoBehaviour
         }
 
         ChangeGameState(State.Running);
+    }
+
+    private IEnumerator WaitOnGameOver(float seconds)
+    {
+        yield return new WaitForSeconds(seconds);
+        ui.ShowGameOverMenu();
     }
 }
 
