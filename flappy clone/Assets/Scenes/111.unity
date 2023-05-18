@@ -254,11 +254,11 @@ MonoBehaviour:
   CollisionTag: 
   EventReference:
     Guid:
-      Data1: 1913975313
-      Data2: 1102449428
-      Data3: 955925131
-      Data4: 370116590
-    Path: event:/Test
+      Data1: 711954397
+      Data2: 1159893271
+      Data3: 1150038677
+      Data4: -461149664
+    Path: event:/Test 2
   Event: 
   PlayEvent: 1
   StopEvent: 2
@@ -335,11 +335,11 @@ MonoBehaviour:
   CollisionTag: 
   EventReference:
     Guid:
-      Data1: 711954397
-      Data2: 1159893271
-      Data3: 1150038677
-      Data4: -461149664
-    Path: event:/Test 2
+      Data1: 1913975313
+      Data2: 1102449428
+      Data3: 955925131
+      Data4: 370116590
+    Path: event:/Test
   Event: 
   PlayEvent: 1
   StopEvent: 2
