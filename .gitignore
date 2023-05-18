@@ -72,9 +72,10 @@ crashlytics-build.properties
 /[Aa]ssets/[Ss]treamingAssets/aa/*
 
 # FMOD Editor Generated Files
-Assets/FMODStudioCache.asset
-Assets/FMODStudioCache.asset.meta
-Fmod.log
-Fmod_editor.log
-Assets/Plugins/FMOD/Cache/Editor/FMODStudiocache.asset.meta
-Assets/Plugins/FMOD/Cache/Editor/FMODStudiocache.asset
+[Aa]ssets/FMODStudioCache.asset
+[Aa]ssets/FMODStudioCache.asset.meta
+fmod.log
+fmod_editor.log
+[Aa]ssets/Plugins/FMOD/Cache/Editor/FMODStudiocache.asset.meta
+[Aa]ssets/Plugins/FMOD/Cache/Editor/FMODStudiocache.asset
+flappy clone/fmod_editor.log
